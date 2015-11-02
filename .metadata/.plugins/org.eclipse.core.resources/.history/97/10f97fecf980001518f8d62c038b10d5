@@ -1,0 +1,26 @@
+package level1;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class MyDirstGui {
+	JFrame window;
+	JPanel panel;
+	JButton button;
+	public static void main(String[] args) {
+
+	MyDirstGui m = new MyDirstGui();
+	}
+	MyDirstGui(){
+		System.out.println("hello");
+		window = new JFrame();
+		window.setVisible(true);
+		window.setSize(500, 500);
+		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		panel = new JPanel();
+		window.add(panel);
+		button= new JButton("Button mania!");
+		panel.add(button);
+	}
+}

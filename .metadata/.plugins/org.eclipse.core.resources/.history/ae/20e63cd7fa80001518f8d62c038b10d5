@@ -1,0 +1,34 @@
+package level1;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class MyDirstGui implements ActionListener{
+	JFrame window;
+	JPanel panel;
+	JButton button;
+	public static void main(String[] args) {
+
+	MyDirstGui m = new MyDirstGui();
+	}
+	MyDirstGui(){
+		System.out.println("hello");
+		window = new JFrame("Button time");
+		window.setVisible(true);
+		window.setSize(500, 500);
+		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		panel = new JPanel();
+		window.add(panel);
+		button= new JButton("Shoot!");
+		panel.add(button);
+		button.addActionListener(this);
+	}
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		
+	}
+}

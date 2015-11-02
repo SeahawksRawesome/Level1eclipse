@@ -1,0 +1,15 @@
+package level1;
+
+import javax.swing.JFrame;
+
+public class MyDirstGui {
+	JFrame window;
+	public static void main(String[] args) {
+
+	MyDirstGui m = new MyDirstGui();
+	}
+	MyDirstGui(){
+		System.out.println("hello");
+		window = new JFrame();
+	}
+}

@@ -1,0 +1,12 @@
+package level1;
+
+public class MyDirstGui {
+
+	public static void main(String[] args) {
+
+	MyDirstGui m = new MyDirstGui();
+	}
+	MyDirstGui(){
+		System.out.println("hello");
+	}
+}
