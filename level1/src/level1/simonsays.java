@@ -20,15 +20,15 @@ public class simonsays extends KeyAdapter {
  	HashMap<Integer,String> images = new HashMap<Integer, String>();
  	private int imageIndex;
  	private int tries = 0;
- 	private int simonSays = 0;
+ 	private boolean simonSays = true;
  	Date timeAtStart;
  	int p = 0;
  	private  void makeAlbum() {
  // 2. add 4 images which match keyboard keys like this: images.put(new Integer(KeyEvent.VK_UP), "image.jpg");
- 		images.put(new Integer(KeyEvent.VK_DOWN), "images.jpg");
- 		images.put(new Integer(KeyEvent.VK_UP), "images.png");
+ 		images.put(new Integer(KeyEvent.VK_UP), "images.jpg");
+ 		images.put(new Integer(KeyEvent.VK_RIGHT), "images.png");
  		images.put(new Integer(KeyEvent.VK_LEFT), "imgres-1.jpg");
- 		images.put(new Integer(KeyEvent.VK_RIGHT), "imgres.jpg");
+ 		images.put(new Integer(KeyEvent.VK_DOWN), "imgres.jpg");
  // 3. Tell the user to "Press the matching key when 'Simon says' otherwise press a different key"
 	 		JOptionPane.showMessageDialog(null, "Press the matching button when Siimon saaaaaays!!");
  // 4. call the method to show an image
@@ -40,12 +40,12 @@ public class simonsays extends KeyAdapter {
     	//17. if the keyCode matches the imageIndex and "Simon says..."  increase their score
 		System.out.println(keyCode);
 		System.out.println(imageIndex);
-		if(keyCode == imageIndex && simonSays > 0){
+		if(keyCode == imageIndex && simonSays ){
 			p += 1;
 			speak("Correct");
 		}
     	//18.   if the keyCode doesn't match the imageIndex and "Simon didn't say..."  increase their score	
-		else if(keyCode != imageIndex && simonSays == 0){
+		else if(keyCode != imageIndex && !simonSays ){
 		p += 1;
 			speak("Correct");
 	}
@@ -81,12 +81,12 @@ public class simonsays extends KeyAdapter {
      	frame.addKeyListener(this);
    	 //10. Use the speak method to either say "Simon says press this key" or "Press this key"
     	//Hint: use the simonSays int and a random number
-     	simonSays = new Random().nextInt(2);
-     if(0 == simonSays){
-    	 speak("Press this key");
+     	simonSays = new Random().nextBoolean();
+     if(simonSays){
+    	 speak("Simon says press this key");
      }
      else{
-    	 speak("Simon says press this key");
+    	 speak("Press this key");
      }
 	}
 	private Component getNextRandomImage() {
