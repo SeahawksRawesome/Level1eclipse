@@ -66,8 +66,11 @@ public class KeyPractice implements KeyListener, ActionListener{
 		// TODO Auto-generated method stub
 		int i = Integer.parseInt(field.getText());
 		int w = Integer.parseInt(field.getText());
-		if(e.getSource() == button2){
+		if(e.getSource() == button){
 			JOptionPane.showMessageDialog(null, w + i);
+		}
+		if(e.getSource() == button2){
+			JOptionPane.showMessageDialog(null, w * i);
 		}
 	}
 }
