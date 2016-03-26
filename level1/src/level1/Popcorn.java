@@ -5,7 +5,8 @@ package level1;
  */
 
 class Microwave {
-	private int cookTime;
+	private int cookTime = 10
+			;
 	Popcorn thingToBeCooked;
 
 	Microwave() {

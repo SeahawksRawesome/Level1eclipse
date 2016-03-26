@@ -1,6 +1,14 @@
 package level1;
 	public class TeaMaker {
-
+		public static void main(String [] args){
+			TeaBag stuff = new TeaBag(TeaBag.GREEN);
+			Kettle steel = new Kettle();
+			Cup drink = new Cup();
+			steel.getWater();
+			steel.boil();
+			drink.makeTea(stuff, steel.getWater());
+			
+		}
 		/* Figure out how to make a cup of tea using the classes below */
 
 	}
@@ -13,9 +21,7 @@ package level1;
 		public final static String PASSION_FRUIT = "Passion Fruit";
 
 		private String flavor;
-		public static void main(String [] args){
-			
-		}
+		
 		TeaBag(String flavor) {
 			this.flavor = flavor;
 		}
