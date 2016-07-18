@@ -10,7 +10,7 @@ import java.util.Random;
 
 import javax.swing.JOptionPane;
 
-public class SpellingBee {
+public class SpellingBeescratch {
 	int lines;
 	ArrayList<String> words = new ArrayList<>();
 
@@ -21,24 +21,25 @@ public class SpellingBee {
 	 * that you need to write code in is the stuffForYouToDo() Method
 	 */
 	public void stuffForYouToDo() {
-		String x = randomWord();
-		System.out.println(x);
-		Speak(x);
-		String said = JOptionPane.showInputDialog("What was zat word? I you get zit wrong, you are stoopid! Brandon is so smart that he gets the words wrong because he wants to make you feel better.");
-	if(said.equals(x)){
-		Speak("errrr meh gurd! U so Savage! U IZ SMARTZESES");
-	}
-	else{
-		Speak("hahahahahahahahan...... you are so stoooooopid!");
-	}
-	}
 		
+		String word = randomWord();
+		Speak(word);
+		System.out.println(word);
+		String answer = JOptionPane.showInputDialog("WHat did the computer say? If it is hard, you can have the word for free:" + randomWord());
+		if(answer.equals(word)){
+			Speak("U Did it. U Got E. Nice Jerb. WHoo Hoo. U just Juan. We tryed to trick you by puttinh a fake word. Hahahahahaha! I Iz Glads dat u got ee, 360 no scoped, 24 blaze itededdede");
+		
+		}
+		else{
+			Speak("Ha, Got E. We tricked u soooo Hard!!! That was not the word! Get TROLLLLLLLLLLEDDDDDDD!!! DErp DErp Depr DERRRPPPPPPP!!!!");
+		}
+	}
 
 	public String randomWord() {
 		return words.get(new Random().nextInt(lines));
 	}
 
-	public SpellingBee() {
+	public SpellingBeescratch() {
 		System.out.println(" /--------------------------------------------\\ ");
 		System.out.println(" | Warning: Some of the words are super hard! | ");
 		System.out.println(" \\--------------------------------------------/ ");
@@ -47,7 +48,7 @@ public class SpellingBee {
 			LineNumberReader lnr = new LineNumberReader(new FileReader(new File("/usr/share/dict/words")));
 			lnr.skip(Long.MAX_VALUE);// Skip to the end
 			lines = lnr.getLineNumber();// Get last line number
-			//speakNoWait(lines + " words loaded");
+			
 			System.out.println("Number of words: " + lines);
 			lnr.close();
 			BufferedReader br = new BufferedReader(new FileReader(new File("/usr/share/dict/words")));
@@ -62,7 +63,7 @@ public class SpellingBee {
 	}
 
 	public static void main(String[] args) {
-		new SpellingBee();
+		new SpellingBeescratch();
 	}
 
 	public void Speak(String text) {
@@ -82,3 +83,5 @@ public class SpellingBee {
 	}
 
 }
+
+
