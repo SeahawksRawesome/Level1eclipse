@@ -57,7 +57,7 @@ public class OddEven implements ActionListener {
 		}
 		if (e.getSource() == b2) {
 			int x = r.nextInt(100);
-			if (x % 2 == 1) {
+			if (x % 2 == 0) {
 				l2.setVisible(true);
 				l2.setText(x + "");
 			}
